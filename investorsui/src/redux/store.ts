@@ -1,7 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
+import { investorListStore } from "../stores/investorListStore";
+import { investorDetailStore } from "../stores/investorDetailStore";
 
 const rootReducer = combineReducers({
+	investorList: investorListStore.reducer,
+	investorDetails: investorDetailStore.reducer,
 })
 
 export const store = configureStore({

@@ -1,5 +1,5 @@
 import { ApiResponse, get } from "../../api/investorApi";
-import { assetClass, Investor, InvestorCommitment } from "./dtos";
+import { AssetClass, Investor, InvestorCommitment } from "./dtos";
 
 export default class InvestorService {
 
@@ -7,18 +7,18 @@ export default class InvestorService {
 		return await get<Investor[]>('/investors');
 	}
 
-	public async getInvestorCommitments(investor_id: number, asset_class: assetClass): Promise<ApiResponse<InvestorCommitment[]>> {
+	public async getInvestorCommitments(investor_id: number, asset_class: AssetClass): Promise<ApiResponse<InvestorCommitment[]>> {
 		return await await get<InvestorCommitment[]>(`/investor/commitment/${asset_class}/${investor_id}`);
 	}
 
-	public getAssetClasses(): Map<assetClass, string> {
-		return new Map<assetClass, string>([
-			[assetClass.PE, 'Private Equity'],
-			[assetClass.PD, 'Private Debt'],
-			[assetClass.RE, 'Real Estate'],
-			[assetClass.INF, 'Infrastructure'],
-			[assetClass.NR, 'Natural Resources'],
-			[assetClass.HF, 'Hedge Funds']
+	public getAssetClasses(): Map<AssetClass, string> {
+		return new Map<AssetClass, string>([
+			[AssetClass.PE, 'Private Equity'],
+			[AssetClass.PD, 'Private Debt'],
+			[AssetClass.RE, 'Real Estate'],
+			[AssetClass.INF, 'Infrastructure'],
+			[AssetClass.NR, 'Natural Resources'],
+			[AssetClass.HF, 'Hedge Funds']
 		]);
 	}
 }

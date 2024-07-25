@@ -14,13 +14,13 @@ export interface Investor {
 
 export interface InvestorCommitment {
     id: number,
-    assetClass: assetClass,
+    assetClass: AssetClass,
     firm_id: number,
     currency: string,
     amount: string
 }
 
-export enum assetClass {
+export enum AssetClass {
     PE = 'pe',
     PD = 'pd',
     RE = 're',
