@@ -52,7 +52,7 @@ export const investorDetailStore = createSlice({
     }
 });
 
-export const getInvestorCommitments = createAsyncThunk<ApiResponse<InvestorCommitment[]>, { investorId: number, assetClass: AssetClass }, { state: RootState }>('getArticleList',
+export const getInvestorCommitments = createAsyncThunk<ApiResponse<InvestorCommitment[]>, { investorId: number, assetClass: AssetClass }, { state: RootState }>('getInvestorCommitments',
     async (args) => {
         const investorService = new InvestorService();
 
@@ -60,7 +60,7 @@ export const getInvestorCommitments = createAsyncThunk<ApiResponse<InvestorCommi
     }
 );
 
-export const getInvestorDetails = createAsyncThunk <{ investor: Investor | undefined, assetClasses: Map<AssetClass, string> | undefined, error: string | undefined | null}, number, { state: RootState }>('getArticleList',
+export const getInvestorDetails = createAsyncThunk<{ investor: Investor | undefined, assetClasses: Map<AssetClass, string> | undefined, error: string | undefined | null }, number, { state: RootState }>('getInvestorDetails',
     async (investorId) => {
 
         const investorService = new InvestorService();
