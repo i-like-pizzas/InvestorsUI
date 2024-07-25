@@ -1,8 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { validationError } from "./types";
+import { ValidationError } from "./types";
 
 const baseUrl = import.meta.env.VITE_API_URL;
-
 
 const getInstance = () =>
 	axios.create({
@@ -12,7 +11,7 @@ const getInstance = () =>
 		}
 	});
 
-export class apiResponse<T> {
+export class ApiResponse<T> {
 	statusCode?: number
 	data?: T
 	message?: string | undefined | null
@@ -27,11 +26,11 @@ function fixUrl(relativeUrl: string): string {
 	return url;
 }
 
-function createResponse<T>(axiosResponse: AxiosResponse<T>): apiResponse<T> {
-	const result = new apiResponse<T>();
+function createResponse<T>(axiosResponse: AxiosResponse<T>): ApiResponse<T> {
+	const result = new ApiResponse<T>();
 
 	if (axiosResponse.status == 422) {
-		const validationErrors = (axiosResponse.data as validationError)?.detail?.map(x => x.msg);
+		const validationErrors = (axiosResponse.data as ValidationError)?.detail?.map(x => x.msg);
 
 		result.data = axiosResponse.data;
 		result.statusCode = axiosResponse.status;
@@ -49,7 +48,7 @@ function createResponse<T>(axiosResponse: AxiosResponse<T>): apiResponse<T> {
 	return result;
 }
 
-export async function get<T = unknown>(relativeUrl: string): Promise<apiResponse<T>> {
+export async function get<T = unknown>(relativeUrl: string): Promise<ApiResponse<T>> {
 	const instance = getInstance()
 
 	try {
@@ -67,8 +66,8 @@ export async function get<T = unknown>(relativeUrl: string): Promise<apiResponse
 	}
 }
 
-async function handleErrorResponse<T>(error: unknown): Promise<apiResponse<T>> {
-	const response = new apiResponse<T>();
+async function handleErrorResponse<T>(error: unknown): Promise<ApiResponse<T>> {
+	const response = new ApiResponse<T>();
 
 	response.message = "Error";
 

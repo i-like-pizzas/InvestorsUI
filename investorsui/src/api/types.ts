@@ -1,8 +1,8 @@
-export interface validationError {
-    detail: validationErrorDetail[] | undefined
+export interface ValidationError {
+    detail: ValidationErrorDetail[] | undefined
 }
 
-export interface validationErrorDetail {
+export interface ValidationErrorDetail {
     loc: unknown[] | undefined,
     msg: string | undefined,
     type: string | undefined
