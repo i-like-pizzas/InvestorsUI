@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "investorsui", "InvestorsUI\investorsui.esproj", "{20AD67CB-1063-44F7-A947-E8665A9DA142}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AD67CB-1063-44F7-A947-E8665A9DA142}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F67DDA0F-38B5-4698-AF8F-369C4C3AF495}
+	EndGlobalSection
+EndGlobal
